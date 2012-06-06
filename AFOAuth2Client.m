@@ -23,6 +23,7 @@
 #import "AFOAuth2Client.h"
 
 NSString * const kAFOAuthBasicGrantType = @"user_basic";
+NSString * const kAFOAuthPasswordGrantType = @"password";
 NSString * const kAFOauthRefreshGrantType = @"refresh_token"; 
 
 @interface AFOAuth2Client ()
@@ -57,7 +58,7 @@ NSString * const kAFOauthRefreshGrantType = @"refresh_token";
                                failure:(void (^)(NSError *error))failure
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [parameters setObject:kAFOAuthBasicGrantType forKey:@"grant_type"];
+    [parameters setObject:kAFOAuthPasswordGrantType forKey:@"grant_type"];
     [parameters setObject:clientID forKey:@"client_id"];
     [parameters setObject:secret forKey:@"client_secret"];
     [parameters setObject:username forKey:@"username"];
@@ -74,7 +75,7 @@ NSString * const kAFOauthRefreshGrantType = @"refresh_token";
                                failure:(void (^)(NSError *error))failure
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [parameters setObject:kAFOauthRefreshGrantType forKey:@"grant_type"];
+    [parameters setObject:kAFOAuthPasswordGrantType forKey:@"grant_type"];
     [parameters setObject:clientID forKey:@"client_id"];
     [parameters setObject:secret forKey:@"client_secret"];
     [parameters setObject:refreshToken forKey:@"refresh_token"];

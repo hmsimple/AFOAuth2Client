@@ -24,6 +24,7 @@
 #import "AFHTTPClient.h"
 
 extern NSString * const kAFOAuthBasicGrantType;
+extern NSString * const kAFOAuthPasswordGrantType;
 extern NSString * const kAFOauthRefreshGrantType;
 
 @class AFOAuthAccount;

@@ -33,6 +33,11 @@ NSString * const kAFOauthRefreshGrantType = @"refresh_token";
 @implementation AFOAuth2Client
 @synthesize serviceProviderIdentifier = _serviceProviderIdentifier;
 
++ (id)clientWithBaseURL:(NSURL *)url
+{
+    return [[[AFOAuth2Client alloc] initWithBaseURL:url] autorelease];
+}
+
 - (id)initWithBaseURL:(NSURL *)url {
     self = [super initWithBaseURL:url];
     if (!self) {

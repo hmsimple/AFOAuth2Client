@@ -33,6 +33,8 @@ extern NSString * const kAFOauthRefreshGrantType;
 
 @property (readonly, nonatomic, copy) NSString *serviceProviderIdentifier;
 
++ (id)clientWithBaseURL:(NSURL *)url;
+
 - (void)authenticateUsingOAuthWithPath:(NSString *)path
                               username:(NSString *)username
                               password:(NSString *)password
